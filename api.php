@@ -7,10 +7,10 @@ $movies = "";
 // URl parameter 'page' was manualy changed from 1-4 to import data from the  to database
 function getMovies($count){
 
-
+//Add your API Key on the URL
 $curl = curl_init();
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://api.themoviedb.org/3/discover/movie?api_key=bf87c724080bb353dd3744d5dcee6635&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=4&with_watch_monetization_types=flatrate',
+  CURLOPT_URL => 'https://api.themoviedb.org/3/discover/movie?api_key={API KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=4&with_watch_monetization_types=flatrate',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
