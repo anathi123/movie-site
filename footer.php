@@ -46,9 +46,7 @@ include "connectDB.php";
                     
                  
 
-                        $sql = 'SELECT * FROM favourites inner join
-                         movies on favourites.movie_id = movies.movie_id
-                         WHERE favourites.user_id = '.$_SESSION['user_id'].' LIMIT '.$first_page.' , '.$movies_per_page.'';
+                        $sql = 'SELECT * FROM movies LIMIT '.$first_page.' , '.$movies_per_page.'';
                       
 
                     $query = mysqli_query($conn,$sql);
