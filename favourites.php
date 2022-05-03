@@ -97,7 +97,7 @@ include "nav.php";
 				            				<img src="https://image.tmdb.org/t/p/original<?php echo $row['image'];?>" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
-				            				<a  href="#"> Read more <i class="ion-android-arrow-dropright"></i> </a>
+				            				<a  href="#"> Release Date: <?php echo $row['release_date']?></a>
 				            			</div>
 				            			<div class="title-in">
 				            				<h6><a href="#"><?php echo $row['title'];?></a></h6>
