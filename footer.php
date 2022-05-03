@@ -44,11 +44,29 @@ include "connectDB.php";
                     <!-- Get Pop up modal for movie info -->
                     <?php
                     
+              //Determine page number
+					 
+						if (!isset ($_GET['page']) ) {  
+							$page = 1;  
+						} else {  
+							$page = $_GET['page'];  
+						}  
+
+						$movies_per_page = 9;  
+                        $first_page = ($page-1) * $movies_per_page; 
+					
+
+						//Get total number of movies
+						$sql = 'SELECT * FROM movies';
+						$query = mysqli_query($conn,$sql);
+						$num_of_rows = mysqli_num_rows($query);
+						//Determining number of pages for pagination					 
+						$number_of_page = ceil ($num_of_rows / $movies_per_page);
+
+                   
                  
-
-                        $sql = 'SELECT * FROM movies LIMIT '.$first_page.' , '.$movies_per_page.'';
-                      
-
+                    //limit movies per page
+                    $sql = 'SELECT * FROM movies LIMIT '.$first_page.' , '.$movies_per_page.'';
                     $query = mysqli_query($conn,$sql);
                     if(mysqli_num_rows($query) > 0){
                     while($row = mysqli_fetch_array($query)){
